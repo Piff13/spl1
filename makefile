@@ -6,11 +6,11 @@ main: bin/main.o bin/Facility.o
 	@echo 'Finished building target: main'
 	@echo ' '	
 
-bin/main.o : src/main.cpp 
-	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/main.o src/main.cpp include/Simulation.h
+bin/main.o : src/main.cpp include/Simulation.h
+	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/main.o src/main.cpp
 
 bin/Facility.o : src/Facility.cpp include/Facility.h
-	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Facility.o src/Facility.cpp include/Facility.h
+	g++ -g -Wall -Weffc++ -std=c++11 -c -Iinclude -o bin/Facility.o src/Facility.cpp
 
 clean:
 	rm -f bin/*	
